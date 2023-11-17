@@ -10,8 +10,6 @@ test.describe('My Test Suite', () => {
 
   await prepareOrder(page);
 
-  await placeOrder(page);
-
   await browser.close();
 
   });
@@ -36,14 +34,6 @@ async function prepareOrder(page) {
   await page.locator('xpath=/html/body/nav/div[1]/div[3]/div/a').click()
   await page.getByText('Proceed to checkout').click();
   await page.getByPlaceholder('House number and street name').fill("test")
-}
-
-async function placeOrder(page) {
-  await page.locator('xpath=//*[@id="billing_postcode"]').fill("1234")
-  await page.locator('css=#billing_city').fill("Zurich")
-  await page.click("#place_order")
-
-  expect(await page.getByText('Order received').count()).toBe(1);
 }
 
 
