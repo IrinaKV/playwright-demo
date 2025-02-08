@@ -1,10 +1,8 @@
-const { firefox } = require('playwright');
 const { test, expect } = require('@playwright/test');
 
 test.describe('My Test Suite', () => {
-  test('My Test Case', async ({}) => {
-  const browser = await firefox.launch();
-  const page = await browser.newPage();
+  test('My Test Case', async ({page}) => {
+
   
   await authenticate(page);
 
