@@ -6,7 +6,7 @@ test.describe('My Test Suite', () => {
   
   await authenticate(page);
 
-  await browser.close();
+
 
   });
 });
